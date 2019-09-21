@@ -1,0 +1,303 @@
+/* FRAMES THE WEB APPLICATION */
+body {
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    top: 5%;
+}
+
+/* SCREENS */
+#todo_home {
+    display: grid;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    padding: 5px 10px 5px 10px;
+}
+#todo_list {}
+#todo_item {}
+
+/* HOME SCREEN CONTROLS */
+#home_your_lists_container {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 2;
+}
+#home_your_lists_heading {}
+#home_your_lists_list {}
+#home_banner_container {
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 1;
+    cursor: default;
+}
+#home_new_list_container {
+    grid-column: 2 / span 2;
+    grid-row: 2 / span 1;
+    display: flex;
+}
+#home_new_list_button {
+    margin: auto;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* HOME SCREEN CLASSES */
+.home_list_link {}
+
+/* LIST SCREEN CONTROLS */
+#list_heading {}
+
+#list_trash {
+    position: absolute; 
+    left: 79%;
+    width: 20%;
+    text-align: right;
+    top: 5%;
+    font-size: 40px;
+    background: transparent;
+}
+
+#list_details_container {
+    padding-left: 2%;
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    grid-gap: 5px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+#list_details_name_container {}
+#list_name_prompt {}
+#list_name_textfield {}
+#list_details_owner_container {}
+#list_owner_prompt {}
+#list_owner_textfield {}
+#list_items_container {}
+
+/* LIST SCREEN CLASSES */
+.list_item_card, .list_item_add_card, .list_item_header_card {
+    position: relative;
+    height: 50px;
+    grid-row-gap: 0px;
+    grid-column-gap: 50px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#list_item_add_card{
+    object-position: center;
+    font-size: 30pt;
+    text-align: center;
+}
+
+.list_item_move_up_first {
+
+}
+
+.list_item_move_up, .list_item_move_down,.list_item_card_delete, .list_item_move_up_first, .list_item_move_down_last {
+    position: absolute;
+    font-size: 30pt;
+    border-radius: 10%;
+    width: 4%;
+    height: 90%;
+}
+
+.list_item_move_up, .list_item_move_down,.list_item_card_delete {
+    background-color: var(--swatch-accent);
+}
+
+.list_item_move_up_first, .list_item_move_down_last {
+    background-color: #d3d3d3;
+}
+
+.list_item_move_up, .list_item_move_up_first{
+    left: 87.8%;
+}
+
+.list_item_move_down, .list_item_move_down_last {
+    left: 91.9%;
+}
+
+.list_item_card_delete {
+    left: 96%;
+}
+
+.list_item_card_description {
+    position: absolute;
+    left: 2%;
+}
+.list_item_task_header, .list_item_due_date_header, .list_item_status_header {
+    position: absolute;
+    top: 5%;
+}
+.list_item_card_assigned_to, .list_item_card_due_date, 
+.list_item_card_completed, .list_item_card_not_completed {
+    position: absolute;
+    top: 50%;
+}
+.list_item_task_header, .list_item_card_assigned_to {
+    left: 2%;
+}
+.list_item_due_date_header, .list_item_card_due_date {
+    left: 35%;
+}
+.list_item_status_header, .list_item_card_completed, .list_item_card_not_completed {
+    left: 60%;
+}
+.list_item_card_toolbar {
+    position: absolute;
+    left: 85%;
+    width: 15%;
+    top: 5%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+.list_item_card_button {
+    text-align: center;
+    border-radius: 5px;
+    margin: 1%;
+}
+.list_item_add_card {
+    text-align: center;
+    vertical-align: center;
+}
+
+/* ITEM SCREEN CONTROLS */
+#item_heading {}
+#item_form_container {
+    display: grid;
+}
+#item_description_prompt {}
+#item_description_textfield {}
+#item_assigned_to_prompt {}
+#item_assigned_to_textfield {}
+#item_due_date_prompt {}
+#item_due_date_picker {}
+#item_completed_prompt {}
+#item_completed_checkbox {}
+#item_form_submit_button {}
+#item_form_cancel_button {}
+
+/* ITEM SCREEN CLASSES */
+.item_prompt {
+    grid-column: 1 / 4;
+}
+.item_input {
+    grid-column: 3 / 4;
+}
+
+/* DELETE LIST DIALOG BOX */
+
+#modal_yes_no_dialog_background_hide, #modal_yes_no_dialog_background_show {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    top: 00px;
+    background-color: transparent;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+#modal_yes_no_dialog_background_hide {
+    visibility: hidden;
+}
+
+#modal_yes_no_dialog_background_show {
+    visibility: visible;
+}
+
+#modal_yes_no_dialog_show, #modal_yes_no_dialog_hide{
+    position: absolute;
+    height: 200px;
+    width: 500px;
+    background-color: #e2e3cd;
+    padding: 20px 20px;
+    border-radius: 10px;
+}
+
+#modal_yes_no_dialog_hide{
+    left: 350px;
+    top: 180px;
+    visibility: hidden;
+  }
+
+
+#modal_yes_no_dialog_show{
+    left: 350px;
+    top: 180px;
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 0.15s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 0.15s;
+  }
+  
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes example {
+    from {visibility: hidden;}
+    to {visibility: visible;}
+  }
+  
+  /* Standard syntax */
+  @keyframes example {
+    from {visibility: hidden;}
+    to {visibility: visible;}
+    0%   {opacity: 0;}
+    25%  {opacity: 0.25;}
+    50%  {opacity: 0.5;}
+    75%  {opacity:0.75;}
+    100% {opacity: 1.0;}
+  }
+
+#delete_dialog_box_question {
+    padding-top: 3em;
+    padding-bottom: 1em;
+    font-weight: 1000;
+}
+
+#list_delete_list, #list_cancel_delete_list, #list_delete_buttons {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 12pt;
+}
+
+#list_delete_list, #list_cancel_delete_list {
+    background-color: #e1e1e1;
+    padding-left: 1em;
+    padding-right: 15px;
+}
+
+#item_name_container, #assigned_to_container, #due_date_container, #completed_container {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-weight: 1000;
+}
+
+#list_submit_buttons {
+    font-weight: 1000;
+    padding-bottom: 0em;
+    font-size: 25pt;
+}
+
+#item_container {
+    font-size: 15pt;
+    padding-top: 0em;
+    padding-bottom: 1em;
+    font-weight: 1000;
+}
+
+#item_description_textfield, #assigned_to_textfield, #due_date_dropdown{
+    left: 20%;
+    position: absolute;
+    width: 79.5%;
+    font-size: 16pt;
+}
+
+#due_date_dropdown{
+    font-weight: 0;
+}
+
+#completed_checkbox {
+    left: 20%;
+    position: absolute;
+}
