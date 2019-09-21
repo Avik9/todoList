@@ -229,6 +229,11 @@ class TodoListModel {
         }
     }
 
+    /**
+     *  Loads the item that wwas requested in the parameter
+     * 
+     * @param {String} itemDescription 
+     */
     loadItem(itemDescription) {
         // FIRST FIND THE ITEM WITH THE GIVEN NAME
         let itemToLoad = null;
@@ -248,6 +253,9 @@ class TodoListModel {
         }
     }
 
+    /**
+     *  This function is called to update the item currently being editted by the user
+     */
     updateItem() {
         let assignedTo = document.getElementById(TodoGUIId.LIST_ITEM_ASSIGNED_TO_TEXTFIELD);
         this.itemToEdit.setAssignedTo(assignedTo.value);
@@ -264,6 +272,9 @@ class TodoListModel {
         window.todo.view.loadItems(this.listToEdit);
     }
 
+    /**
+     *  This function is called to create a item by the user
+     */
     createNewItem() {
         this.itemToEdit = new TodoListItem();
 
@@ -354,6 +365,9 @@ class TodoListModel {
         }
     }
 
+    /**
+     *  This function is called to clear the edit/add item screen for the user
+     */
     emptyItemPanel() {
         let description = document.getElementById(TodoGUIId.LIST_ITEM_DESCRIPTION_TEXTFIELD);
         description.value = "";

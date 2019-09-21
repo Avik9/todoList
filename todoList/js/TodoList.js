@@ -70,12 +70,15 @@ class TodoList {
     }
 
     /**
-     * Reeturns the length of the items[]
+     * Returns the length of the items[]
      */
     getLength() {
         return this.items.length;
     }
 
+    /**
+     *  Returns the number of items in the items[]
+     */
     getCurrentLength() {
         let counter = 0;
 
@@ -97,6 +100,11 @@ class TodoList {
         return this.items[index];
     }
 
+    /**
+     *  Moves up the item passed in by one spot in the array
+     * 
+     * @param {TodoListItem} itemToMoveUp 
+     */
     moveItemUp(itemToMoveUp) {
         let indexOfItem = this.items.indexOf(itemToMoveUp);
 
@@ -107,6 +115,11 @@ class TodoList {
         }
     }
 
+    /**
+     *  Moves doen the item passed in by one spot in the array
+     * 
+     * @param {TodoListItem} itemToMoveDown 
+     */
     moveItemDown(itemToMoveDown) {
         let indexOfItem = this.items.indexOf(itemToMoveDown);
 

@@ -72,8 +72,6 @@ class TodoListView {
             completedDiv.setAttribute(TodoHTML.CLASS, TodoGUIClass.LIST_ITEM_CARD_NOT_COMPLETED);
         }
 
-        // Adding due date DIV
-
         let dueDateDiv = document.createElement(TodoHTML.DIV);
         dueDateDiv.setAttribute(TodoHTML.CLASS, TodoGUIClass.LIST_ITEM_CARD_DUE_DATE);
         dueDateDiv.innerHTML = listItem.getDueDate();
@@ -225,6 +223,11 @@ class TodoListView {
         this.loadItems(listToLoad);
     }
 
+    /**
+     * Loads the TodoListItem on the screen when this function is called
+     * 
+     * @param {TodoListItem} listItemToLoad 
+     */
     loadItemData(listItemToLoad) {
         let description = document.getElementById(TodoGUIId.LIST_ITEM_DESCRIPTION_TEXTFIELD);
         description.value = listItemToLoad.getDescription();

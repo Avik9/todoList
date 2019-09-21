@@ -94,16 +94,21 @@ class TodoListController {
     }
 
     /**
-     * This function hides the pop up box and returns back to the 
+     * This function hides the pop up box and returns back to the list screen
      */
     processCancelDeleteList() {
-        
+
         var deleteListAlertbackground = document.getElementById(TodoGUIId.MODAL_YES_NO_DIALOG_BACKGROUND_SHOW);
         var deleteListAlert = document.getElementById(TodoGUIId.MODAL_YES_NO_DIALOG_SHOW);
         deleteListAlert.id = "modal_yes_no_dialog_hide";
         deleteListAlertbackground.id = "modal_yes_no_dialog_background_hide";
     }
 
+    /**
+     *  Loads the item edit screen to allow the user to edit the item
+     * 
+     * @param {Number} itemNumber 
+     */
     processEditItem(itemNumber) {
 
         let itemName = window.todo.model.listToEdit.getItemAtIndex(itemNumber);
@@ -181,6 +186,10 @@ class TodoListController {
         }
     }
 
+    /**
+     *  This function is called in response to when the user clicks
+     *  on the Due Date header in the items table.
+     */
     processSortItemsByDueDate() {
         // IF WE ARE CURRENTLY INCREASING BY STATUS SWITCH TO DECREASING
         if (window.todo.model.isCurrentItemSortCriteria(ItemSortCriteria.SORT_BY_DUE_DATE_INCREASING)) {
@@ -192,18 +201,35 @@ class TodoListController {
         }
     }
 
+    /**
+     * Moves up the item by one position in the array and reloads the list
+     * 
+     * @param {Number} position 
+     */
     processMoveItemUp(position) {
         window.todo.model.listToEdit.moveItemUp(window.todo.model.listToEdit.getItemAtIndex(position));
         window.todo.view.loadItems(window.todo.model.listToEdit);
         event.stopPropagation();
     }
 
+
+    /**
+     * Moves down the item by one position in the array and reloads the list
+     * 
+     * @param {Number} position 
+     */
     processMoveItemDown(position) {
         window.todo.model.listToEdit.moveItemDown(window.todo.model.listToEdit.getItemAtIndex(position));
         window.todo.view.loadItems(window.todo.model.listToEdit);
         event.stopPropagation();
     }
 
+
+    /**
+     * Deletes the item in the array and reloads the list
+     * 
+     * @param {Number} position 
+     */
     processDeleteItem(position) {
         window.todo.model.listToEdit.removeItem(window.todo.model.listToEdit.getItemAtIndex(position));
         window.todo.view.loadItems(window.todo.model.listToEdit);
@@ -223,6 +249,9 @@ class TodoListController {
 
     }
 
+    /**
+     *  This function is called when the user presses the submit button in the Edit/Add item screen
+     */
     processSubmitItemChanges() {
 
         if (window.todo.model.newItem) {
@@ -239,12 +268,12 @@ class TodoListController {
 
         window.todo.model.emptyItemPanel();
 
-        // window.alert(document.getElementsByClassName("list_item_move_up").length);
-        // window.alert(document.getElementsByClassName("list_item_move_up").firstChild);
-
         window.todo.model.goList();
     }
 
+    /**
+     *  This function is called when the user presses the cancel button in the Edit/Add item screen
+     */
     processCancelItemChanges() {
         window.todo.model.itemToEdit = null;
         window.todo.model.newItem = false;
