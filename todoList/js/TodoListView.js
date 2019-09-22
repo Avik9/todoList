@@ -161,6 +161,9 @@ class TodoListView {
         dueDateHeaderDiv.innerHTML = 'Due Date';
         this.setupCallback(dueDateHeaderDiv, TodoHTML.ONCLICK, TodoCallback.PROCESS_SORT_ITEMS_BY_DUE_DATE, callbackArguments);
 
+        let addItemDiv = document.getElementById(TodoGUIClass.LIST_ITEM_ADD_CARD);
+        this.setupCallback(addItemDiv, TodoHTML.ONCLICK, TodoCallback.PROCESS_CREATE_NEW_ITEM, []);
+
         // THESE GO IN THE DETAILS DIV
         listItemHeaderDiv.appendChild(taskHeaderDiv);
         listItemHeaderDiv.appendChild(statusHeaderDiv);
